@@ -31,3 +31,4 @@ for(let i = 0; i <6; i++ ){
 console.log (`\nO maior salario é de: ${maiorS.nome}`)
 console.log(`\nmedia salarial de: `, mediasalario / 6)
 console.log(`\na empresa tem ${qntGerente} gerentes`)
+
