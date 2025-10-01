@@ -13,8 +13,8 @@ let cod2 = parseInt(collum2[0])
 let num2 = parseInt(collum2[1])
 let value2 = parseFloat(collum2[2])
 
-let total = parseFloat(value1 + value2)
+let total = parseFloat(num1 * value1) + (num2 * value2)
 
-console.log(`VALOR A PAGAR: R$ ${total}`)
+console.log(`VALOR A PAGAR: R$ ${total.toFixed(2)}`)
 
 
