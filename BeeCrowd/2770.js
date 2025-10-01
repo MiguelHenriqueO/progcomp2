@@ -13,9 +13,7 @@ while(i<lines.length){
         if((xi<=x && yi<= y) || (xi <=y && yi<=x)){
             console.log("Sim")
         }else{ 
-            console.log("Nao")
+            console.log("Nao") 
         }
     }
-    
-
 }
