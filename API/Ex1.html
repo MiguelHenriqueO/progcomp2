@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio 1 API</title>
+</head>
+<body>
+    <h1>Endereços</h1>
+    <button onclick="carregarEnderecos()">Consultar Endereços</button>
+    <ul id="Enderecos"></ul>    
+    <script>
+        async function carregarEnderecos() {
+            try {
+                const resposta = await fetch("https://jsonplaceholder.typicode.com/users");
+                const users = await resposta.json();
+                const lista = document.getElementById("Enderecos")
+                lista.innerHTML = "";
+
+                for(let i = 0; i < users.length; i++){
+                    const li = document.createElement("li")
+
+                    li.textContent = `Nome: ${users[i].name} - Endereço: ${users[i].address.street}, ${users[i].address.city} - ${users[i].address.zipcode}`;
+
+                    lista.appendChild(li);
+                }
+            } catch (error) {
+                console.error("Erro ao carregar usuários:", error);
+                alert("Não foi possível carregar os dados da API.");
+            }
+        }
+    </script>
+</body>
+</html>

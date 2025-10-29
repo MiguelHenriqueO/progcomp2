@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio 2 API</title>
+</head>
+<body>
+    <h1>Lista de fotos</h1>
+    <h2>
+        Informe a qtde de fotos desejada <input type="number" id="qtde">
+    </h2>
+    <button onclick="carregarFotos()">carregar dados</button>
+    <ul id="listaDados"></ul>    
+    <script>
+        async function carregarFotos() {
+            let qtde = Number(document.getElementById("qtde").value)
+            try {
+                const resposta = await fetch(`https://jsonplaceholder.typicode.com/photos?_limit=${qtde}`);
+                const fotos = await resposta.json();
+                const lista = document.getElementById("listaDados")
+                lista.innerHTML = "";
+
+                for(let i = 0; i < fotos.length; i++){
+                    const li = document.createElement("li")
+
+                    li.textContent = `Titulo: ${fotos[i].title} - ${fotos[i].thumbnailUrl}`;
+
+                    lista.appendChild(li);
+                }
+            } catch (error) {
+                console.error("Erro ao carregar usuários:", error);
+                alert("Não foi possível carregar os dados da API.");
+            }
+        }
+    </script>
+</body>
+</html>
