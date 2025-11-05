@@ -2,8 +2,11 @@ const notas = ["10","7","3","5","9","2","1","4","6","8"]
 let somaNotas = 0
 let mediaNotas = 0
 let aprovado = 0
+let posicoesPares = []
 
-notas.forEach(function(nota,indice) {
+// forEach pode ser utilizado tanto da forma notas.forEach((nota,indice) => {} em que é uma function sem nome em seta e notas.forEach(function(nota,indice) {} que é uma function com nome
+
+notas.forEach((nota,indice) => {
     console.log(nota)
     somaNotas += nota
    
@@ -11,7 +14,7 @@ notas.forEach(function(nota,indice) {
         aprovado++
     }
     if (indice % 2 == 0){
-        console.log(`posição par: ${nota}`)
+        posicoesPares.push(nota)
     }
 })
 
@@ -19,5 +22,6 @@ notas.forEach(function(nota,indice) {
  console.log(`media das notas é: ${mediaNotas}`)
  console.log(`soma das notas é: ${somaNotas}`)
  console.log(`${aprovado} alunos foram aprovados`)
+ console.log(`notas nas posições pares: ${posicoesPares}`)
  
  
