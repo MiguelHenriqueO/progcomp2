@@ -10,8 +10,10 @@ let vendas = [
 let totalInformatica = 0;
 let totalModa = 0;
 let totalEducacao = 0;
-let maisVendas = totalInformatica
+let maisVendas = 0
 let campea = "Informática"
+
+print(maisVendas, "teste")
 
 vendas.forEach((obj) =>{
     
@@ -26,14 +28,17 @@ vendas.forEach((obj) =>{
     }
 
    if (maisVendas < totalModa){
-    campea = Moda
+    campea = "Moda"
     maisVendas = totalModa
    }
    else if (maisVendas < totalEducacao){
-    campea = Educacao
+    campea = "Educacao"
     maisVendas = totalEducacao
    }
-
+   else if (maisVendas < totalInformatica){
+    campea = "Informática"
+    maisVendas = totalInformatica
+   }
 })
 
 
