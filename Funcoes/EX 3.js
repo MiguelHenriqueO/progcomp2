@@ -7,29 +7,38 @@ let vendas = [
     { produto: "Tablet", categoria: "Informática", valor: 1500, quantidade: 1 }
 ]
 
-let totalInformatica
-let totalModa
-let totalEducacao
+let totalInformatica = 0;
+let totalModa = 0;
+let totalEducacao = 0;
 let maisVendas = totalInformatica
+let campea = "Informática"
 
 vendas.forEach((obj) =>{
     
     if (obj.categoria === "Informática"){
-        totalInformatica = obj.valor * obj.quantidade
+        totalInformatica += obj.valor * obj.quantidade
     }
     else if (obj.categoria === "Moda"){
-        totalModa = obj.valor * obj.quantidade
+        totalModa += obj.valor * obj.quantidade
     }
     else if (obj.categoria === "Educação"){
-        totalEducacao = obj.valor * obj.quantidade
+        totalEducacao += obj.valor * obj.quantidade
     }
 
    if (maisVendas < totalModa){
+    campea = Moda
     maisVendas = totalModa
    }
    else if (maisVendas < totalEducacao){
+    campea = Educacao
     maisVendas = totalEducacao
    }
 
 })
+
+
+console.log("Total Informática: R$", totalInformatica);
+console.log("Total Moda: R$", totalModa);
+console.log("Total Educação: R$", totalEducacao);
+console.log("Categoria campeã:", Campea, "com R$", maisVendas);
 
