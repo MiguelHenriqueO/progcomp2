@@ -40,5 +40,5 @@ vendas.forEach((obj) =>{
 console.log("Total Informática: R$", totalInformatica);
 console.log("Total Moda: R$", totalModa);
 console.log("Total Educação: R$", totalEducacao);
-console.log("Categoria campeã:", Campea, "com R$", maisVendas);
+console.log("Categoria campeã:", campea, "com R$", maisVendas);
 
